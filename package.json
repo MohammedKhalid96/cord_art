@@ -1,0 +1,46 @@
+{
+  "name": "cord-graphics",
+  "version": "1.0.0",
+  "description": "Cord Graphics Portfolio",
+  "author": "Cord Digital",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-brands-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
+    "@nuxtjs/axios": "^5.11.0",
+    "animejs": "^3.1.0",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "gsap": "^2.1.3",
+    "hover-effect": "^1.1.0",
+    "jquery": "^3.4.1",
+    "nuxt": "^2.0.0",
+    "nuxt-fontawesome": "^0.4.0",
+    "portal-vue": "^2.1.6",
+    "three": "^0.108.0",
+    "vue-blotter": "^0.1.3",
+    "vue-carousel": "^0.18.0",
+    "vue-page-transition": "^0.2.2",
+    "vue-popperjs": "^2.1.0",
+    "vue-wow": "^1.2.0",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}
