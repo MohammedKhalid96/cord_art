@@ -733,14 +733,6 @@ input[type="email"] {
   display: none;
 }
 
-/* .cover-overlay {
-  position: absolute;
-height: 100%;
-width: 100%;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to top, #0b0f11, #0b0f110c, transparent);
-} */
 
 .cover-img-overlay {
   margin-top: 10px;
@@ -748,10 +740,26 @@ width: 100%;
 
 .home-category {
   position: relative;
-  /* background: linear-gradient(to top, #0b0f1171, #0b0f110c, transparent), url("../images/thumbnail_printing&packaging00.png"); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.category-img {
+  position: relative;
+}
+
+.category-img img {
+  object-fit: contain;
+  object-position: top left;
+}
+
+.category-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 15%;
+  left: 0;
 }
 
 .test .home-category-caption {
