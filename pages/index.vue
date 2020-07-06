@@ -59,10 +59,27 @@
             </div>
             <div class="cover-img-overlay">
               <div class="row no-gutters">
-                <div class="col-md-4">
+                <div
+                  class="col-md-4"
+                  v-for="(category, index) in categories"
+                  :index="index"
+                  :key="category.id"
+                >
                   <nuxt-link to="/single">
                     <div class="cover-overlay-img">
-                      <img src="../assets/images/port-6.png" alt class="image-100" />
+                      <img
+                        :src="'https://corddigital.com/art/public/images/' + category.single_photo"
+                        alt
+                        class="image-100"
+                      />
+                      <div class="single-overlay-name">
+                        <span class="circle-name"></span>
+                        <span class="circle-name-link">
+                          <font-awesome-icon :icon="['far', 'hand-scissors']"></font-awesome-icon>
+                          {{ category.get_description[0].title }}
+                        </span>
+                      </div>
+
                       <div class="single-overlay-actions">
                         <span class="circle"></span>
                         <span class="circle-link">
@@ -72,7 +89,7 @@
                     </div>
                   </nuxt-link>
                 </div>
-
+                <!-- 
                 <div class="col-md-4">
                   <nuxt-link to="/single">
                     <div class="cover-overlay-img">
@@ -99,7 +116,7 @@
                       </div>
                     </div>
                   </nuxt-link>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
@@ -596,8 +613,28 @@ export default {
       backgroundUrl,
       backgroundUrl2,
       backgroundUrl3,
-      backgroundUrl4
+      backgroundUrl4,
+      categories: []
     };
+  },
+
+  activated() {
+    if (this.$fetchState.timestamp <= Date.now() - 30000) {
+      this.$fetch();
+    }
+  },
+  async fetch() {
+    const res = await this.$axios.post(
+      "https://corddigital.com/art/public/api/all_cat",
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    this.categories = JSON.parse(JSON.stringify(res.data.Data));
+    console.log(this.categories);
   },
 
   methods: {

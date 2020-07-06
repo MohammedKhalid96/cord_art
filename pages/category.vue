@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="col-md-4" v-for="(user, index) in users" :index="index" :key="user.id">
-        <nuxt-link to="/single">
+        <nuxt-link :to="'/posts/'+user.get_description[0].slug">
           <div class="cover-overlay-img">
             <div>
               <img
@@ -190,7 +190,7 @@ export default {
     }
   },
   async fetch() {
-    const res = await this.$axios.get(
+    const res = await this.$axios.post(
       "https://corddigital.com/art/public/api/all_data_in_cat",
       {
         headers: {

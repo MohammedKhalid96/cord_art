@@ -101,7 +101,7 @@ export default {
   },
 
   router: {
-    base: "/cord-graphics/",
+    base: "/public/art/",
     scrollBehavior(to, from, savedPosition) {
       return { x: 0, y: 0 };
     },
