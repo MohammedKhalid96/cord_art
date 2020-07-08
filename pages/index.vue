@@ -37,7 +37,6 @@
       <div class="category-img">
         <img :src="imgBaseUrl + category.single_photo" alt class="image-100" />
         <div class="category-overlay">
-
           <div class="row no-gutters">
             <div class="col-md-7">
               <div class="cover-img mobile-img">
@@ -50,9 +49,9 @@
               <div class="home-category-caption">
                 <h2 class="home-category-title">
                   Cord
-                  <span class="title-span">{{ category.get_description[0].seo_title }}</span>
+                  <span class="title-span">{{category.get_description[0].seo_title}}</span>
                 </h2>
-                <p class="home-category-desc">{{ category.get_description[0].description }}</p>
+                <p class="home-category-desc" v-html="category.get_description[0].meta_description"></p>
                 <div class="single-overlay-actions">
                   <nuxt-link to="/category">
                     <span class="circle"></span>
